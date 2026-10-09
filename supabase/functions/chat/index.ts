@@ -9,9 +9,18 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+interface PantryItemPayload {
+  ingredient_id: number;
+  name?: string;
+  quantity_grams?: number;
+  expiry_date?: string;
+  days_until_expiry?: number;
+}
+
 interface ChatRequest {
   message: string;
   pantryIds?: number[];
+  pantry_items?: PantryItemPayload[];
   history?: { role: "user" | "model"; text: string }[];
 }
 
@@ -21,21 +30,42 @@ serve(async (req) => {
   }
 
   try {
-    const { message, pantryIds = [], history = [] } = (await req.json()) as ChatRequest;
+    const {
+      message,
+      pantryIds = [],
+      pantry_items = [],
+      history = [],
+    } = (await req.json()) as ChatRequest;
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? Deno.env.get("SUPABASE_ANON_KEY") ?? "";
     const supabase = createClient(supabaseUrl, supabaseKey);
 
+    // Collect effective pantry ingredient IDs from both pantryIds and pantry_items
+    const extractedIds = (pantry_items || [])
+      .map((item) => item.ingredient_id)
+      .filter((id) => typeof id === "number");
+    const effectivePantryIds = Array.from(new Set([...pantryIds, ...extractedIds]));
+
     // 1. Retrieve Candidate Recipes from Postgres
     let candidateRecipes: any[] = [];
-    if (pantryIds.length > 0) {
-      const { data: rpcData } = await supabase.rpc("match_pantry", {
-        pantry_ids: pantryIds,
-        min_coverage: 0.1,
+    if (effectivePantryIds.length > 0) {
+      // First attempt match_pantry_recipes (prioritizes ingredient coverage)
+      const { data: rpcRecipes, error: rpcError } = await supabase.rpc("match_pantry_recipes", {
+        ingredient_ids: effectivePantryIds,
       });
-      if (rpcData && rpcData.length > 0) {
-        candidateRecipes = rpcData.slice(0, 15);
+
+      if (!rpcError && rpcRecipes && rpcRecipes.length > 0) {
+        candidateRecipes = rpcRecipes.slice(0, 15);
+      } else {
+        // Fallback to match_pantry
+        const { data: legacyRpcData } = await supabase.rpc("match_pantry", {
+          pantry_ids: effectivePantryIds,
+          min_coverage: 0.1,
+        });
+        if (legacyRpcData && legacyRpcData.length > 0) {
+          candidateRecipes = legacyRpcData.slice(0, 15);
+        }
       }
     }
 
@@ -69,6 +99,32 @@ serve(async (req) => {
       candidateRecipes = fallbackData ?? [];
     }
 
+    // Format current pantry items with expiry proximity for Gemini
+    let pantryInventorySummary = "No pantry items listed.";
+    if (pantry_items && pantry_items.length > 0) {
+      pantryInventorySummary = pantry_items
+        .map((item) => {
+          const nameStr = item.name ?? `Ingredient #${item.ingredient_id}`;
+          const qtyStr = item.quantity_grams ? ` (${item.quantity_grams}g)` : "";
+          let expStr = "";
+          if (item.days_until_expiry !== undefined && item.days_until_expiry !== null) {
+            if (item.days_until_expiry < 0) {
+              expStr = " [EXPIRED]";
+            } else if (item.days_until_expiry === 0) {
+              expStr = " [EXPIRES TODAY - CRITICAL!]";
+            } else if (item.days_until_expiry <= 2) {
+              expStr = ` [EXPIRING SOON: ${item.days_until_expiry} day(s) left - URGENT!]`;
+            } else {
+              expStr = ` [Expires in ${item.days_until_expiry} days]`;
+            }
+          } else if (item.expiry_date) {
+            expStr = ` [Expiry: ${item.expiry_date}]`;
+          }
+          return `- ${nameStr}${qtyStr}${expStr}`;
+        })
+        .join("\n");
+    }
+
     // 2. Call Gemini if GEMINI_API_KEY is configured
     const geminiApiKey = Deno.env.get("GEMINI_API_KEY");
     if (!geminiApiKey) {
@@ -76,7 +132,7 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({
           source: "local-fallback",
-          reply: `Hey! I raided the catalog for you. Here are ${candidateRecipes.length} top options matching your ingredients:`,
+          reply: `Hey! I raided your pantry and catalog. Here are ${candidateRecipes.length} top options matching your ingredients:`,
           recipes: candidateRecipes.slice(0, 4),
         }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -86,6 +142,11 @@ serve(async (req) => {
     // Call Gemini 2.0 Flash
     const systemPrompt = `You are BiteCraft Chef AI, an encouraging, smart senior-student culinary guide for students living in hostels or solo flats.
 You MUST ONLY recommend recipes from the candidate catalog provided below. NEVER invent recipes or IDs.
+When suggesting recipes, you MUST prioritize recipes that use up the ingredients in the user's pantry, especially those expiring soon. If the user asks 'What should I cook?', suggest a recipe that clears their expiring items.
+
+User Pantry Inventory & Expiring Stock:
+${pantryInventorySummary}
+
 Candidate Catalog:
 ${candidateRecipes.map((r) => `[ID ${r.id}] "${r.title}" (₹${r.cost_per_serving}, ${r.minutes}m, ${r.macros?.protein ?? 0}g protein)`).join("\n")}
 

@@ -38,11 +38,11 @@ class _ChefChatScreenState extends ConsumerState<ChefChatScreen> {
   @override
   void initState() {
     super.initState();
-    // Warm greeting
+    // Warm greeting synced with Smart Pantry
     _messages.add(
       ChefMessage(
         isUser: false,
-        text: 'Hey! I\'m your BiteCraft Chef AI 🥑\nGot random ingredients in your hostel room or fridge? Pick them in the pantry drawer above or tell me what you have (e.g. "onion + eggs" or "bread & sauces"), and I\'ll raid our 10,000 recipe database!',
+        text: 'Hey! I\'m your BiteCraft Chef AI 🥑\nI\'m synced with your Smart Pantry! Tell me what you\'re craving, or ask "What should I cook?" to clear your expiring items, and I\'ll raid our 10,000 recipe database!',
         timestamp: DateTime.now(),
       ),
     );
@@ -81,12 +81,38 @@ class _ChefChatScreenState extends ConsumerState<ChefChatScreen> {
     _scrollToBottom();
 
     final engine = ref.read(suggestionEngineProvider);
-    final pantryIds = ref.read(pantryProvider);
+    final selectedPantryIds = ref.read(pantryProvider);
+    final pantryDao = ref.read(pantryDaoProvider);
+    final repo = ref.read(recipeRepositoryProvider);
+
+    // Fetch local pantry items from Drift DAO before making the API call
+    final localPantryItems = await pantryDao.getAllItems();
+    final allIngs = await repo.getAllIngredients();
+    final now = DateTime.now();
+
+    final pantryItemsPayload = localPantryItems.map((item) {
+      final ing = allIngs[item.ingredientId];
+      final daysUntilExpiry = item.expiryDate?.difference(now).inDays;
+      return {
+        'ingredient_id': item.ingredientId,
+        'name': ing?.name ?? 'Ingredient #${item.ingredientId}',
+        'quantity_grams': item.quantityGrams,
+        'expiry_date': item.expiryDate?.toIso8601String(),
+        'days_until_expiry': daysUntilExpiry,
+      };
+    }).toList();
+
+    // Include both manual selection and local pantry ingredient IDs
+    final effectivePantryIds = <int>{
+      ...selectedPantryIds,
+      ...localPantryItems.map((item) => item.ingredientId),
+    }.toList();
 
     try {
       final reply = await engine.getSuggestion(
         message: query,
-        pantryIds: pantryIds,
+        pantryIds: effectivePantryIds,
+        pantryItems: pantryItemsPayload,
         history: _messages,
       );
 
@@ -443,6 +469,7 @@ class _ChefChatScreenState extends ConsumerState<ChefChatScreen> {
 
   Widget _buildQuickChips(bool isDark) {
     final chips = [
+      '🍳 What should I cook?',
       '🧅 Onion + eggs?',
       '🍞 Bread, butter and sauces',
       '⚡ High protein under ₹60',

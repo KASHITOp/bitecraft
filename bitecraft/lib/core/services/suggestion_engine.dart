@@ -36,6 +36,7 @@ abstract class SuggestionEngine {
     required String message,
     required List<int> pantryIds,
     required List<ChefMessage> history,
+    List<Map<String, dynamic>>? pantryItems,
   });
 }
 
@@ -50,12 +51,21 @@ class LocalSuggestionEngine implements SuggestionEngine {
     required String message,
     required List<int> pantryIds,
     required List<ChefMessage> history,
+    List<Map<String, dynamic>>? pantryItems,
   }) async {
     final lowerMsg = message.toLowerCase();
     final allIngs = await _repo.getAllIngredients();
 
-    // Extract mentioned ingredients by name or alias
+    // Extract mentioned ingredients by name or alias, including pantry items
     final matchedIngIds = <int>{...pantryIds};
+    if (pantryItems != null) {
+      for (final item in pantryItems) {
+        final id = item['ingredient_id'];
+        if (id is int) {
+          matchedIngIds.add(id);
+        }
+      }
+    }
     for (final ing in allIngs.values) {
       if (ing.matches(lowerMsg)) {
         matchedIngIds.add(ing.id);
@@ -88,8 +98,14 @@ class LocalSuggestionEngine implements SuggestionEngine {
     }
 
     final topPicks = candidates.take(3).toList();
+    final hasExpiring = pantryItems != null &&
+        pantryItems.any((p) =>
+            p['days_until_expiry'] != null && (p['days_until_expiry'] as int) <= 2);
+
     final reply = (matchedIngIds.isNotEmpty)
-        ? 'Raid successful! Found ${candidates.length} grounded recipes using your pantry. These top options need the fewest extra items:'
+        ? (hasExpiring
+            ? 'Raid successful! Prioritized recipes that clear your expiring pantry stock:'
+            : 'Raid successful! Found ${candidates.length} grounded recipes using your pantry. These top options need the fewest extra items:')
         : 'Here are the best student meals from our catalog matching "$message":';
 
     return ChefReply(
@@ -104,14 +120,20 @@ class LocalSuggestionEngine implements SuggestionEngine {
 class GeminiSuggestionEngine implements SuggestionEngine {
   final RecipeRepository _repo;
   final LocalSuggestionEngine _localFallback;
+  final http.Client _client;
 
-  GeminiSuggestionEngine(this._repo) : _localFallback = LocalSuggestionEngine(_repo);
+  GeminiSuggestionEngine(
+    this._repo, {
+    http.Client? client,
+  })  : _client = client ?? http.Client(),
+        _localFallback = LocalSuggestionEngine(_repo);
 
   @override
   Future<ChefReply> getSuggestion({
     required String message,
     required List<int> pantryIds,
     required List<ChefMessage> history,
+    List<Map<String, dynamic>>? pantryItems,
   }) async {
     // Attempt remote Edge Function with 8s timeout
     try {
@@ -125,13 +147,14 @@ class GeminiSuggestionEngine implements SuggestionEngine {
       final body = jsonEncode({
         'message': message,
         'pantryIds': pantryIds,
+        'pantry_items': pantryItems ?? <Map<String, dynamic>>[],
         'history': history.map((m) => {
               'role': m.isUser ? 'user' : 'model',
               'text': m.text,
             }).toList(),
       });
 
-      final res = await http.post(
+      final res = await _client.post(
         Uri.parse(url),
         headers: headers,
         body: body,
@@ -167,6 +190,7 @@ class GeminiSuggestionEngine implements SuggestionEngine {
       message: message,
       pantryIds: pantryIds,
       history: history,
+      pantryItems: pantryItems,
     );
   }
 }
