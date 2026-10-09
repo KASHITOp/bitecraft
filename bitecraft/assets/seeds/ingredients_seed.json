@@ -1,0 +1,570 @@
+[
+  {
+    "id": 1,
+    "name": "Onion",
+    "aliases": [
+      "Kanda",
+      "Pyaz",
+      "Piyaz"
+    ],
+    "category": "Produce",
+    "packSize": "1 kg",
+    "avgPackPrice": 38
+  },
+  {
+    "id": 2,
+    "name": "Potato",
+    "aliases": [
+      "Aloo",
+      "Batata",
+      "Alu"
+    ],
+    "category": "Produce",
+    "packSize": "1 kg",
+    "avgPackPrice": 32
+  },
+  {
+    "id": 3,
+    "name": "Tomato",
+    "aliases": [
+      "Tamatar",
+      "Tameta"
+    ],
+    "category": "Produce",
+    "packSize": "500 g",
+    "avgPackPrice": 28
+  },
+  {
+    "id": 4,
+    "name": "Coriander",
+    "aliases": [
+      "Kothimbir",
+      "Dhaniya",
+      "Cilantro"
+    ],
+    "category": "Produce",
+    "packSize": "100 g",
+    "avgPackPrice": 15
+  },
+  {
+    "id": 5,
+    "name": "Poha",
+    "aliases": [
+      "Aval",
+      "Chivda",
+      "Flattened Rice",
+      "Atukulu"
+    ],
+    "category": "Grains",
+    "packSize": "500 g",
+    "avgPackPrice": 42
+  },
+  {
+    "id": 6,
+    "name": "Egg",
+    "aliases": [
+      "Anda",
+      "Eggs",
+      "Muttai"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "6 pack",
+    "avgPackPrice": 52
+  },
+  {
+    "id": 7,
+    "name": "Paneer",
+    "aliases": [
+      "Cottage Cheese",
+      "Chenna"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "200 g",
+    "avgPackPrice": 85
+  },
+  {
+    "id": 8,
+    "name": "Curd",
+    "aliases": [
+      "Dahi",
+      "Yogurt",
+      "Thayir"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "400 g",
+    "avgPackPrice": 35
+  },
+  {
+    "id": 9,
+    "name": "Bread",
+    "aliases": [
+      "Pav",
+      "White Bread",
+      "Brown Bread",
+      "Roti"
+    ],
+    "category": "Bakery",
+    "packSize": "400 g",
+    "avgPackPrice": 40
+  },
+  {
+    "id": 10,
+    "name": "Rice",
+    "aliases": [
+      "Chawal",
+      "Basmati Rice",
+      "Bhat"
+    ],
+    "category": "Grains",
+    "packSize": "1 kg",
+    "avgPackPrice": 65
+  },
+  {
+    "id": 11,
+    "name": "Moong Dal",
+    "aliases": [
+      "Yellow Lentil",
+      "Peeli Dal",
+      "Mung"
+    ],
+    "category": "Pulses",
+    "packSize": "500 g",
+    "avgPackPrice": 70
+  },
+  {
+    "id": 12,
+    "name": "Toor Dal",
+    "aliases": [
+      "Arhar Dal",
+      "Yellow Pigeon Peas"
+    ],
+    "category": "Pulses",
+    "packSize": "500 g",
+    "avgPackPrice": 85
+  },
+  {
+    "id": 13,
+    "name": "Rolled Oats",
+    "aliases": [
+      "Oatmeal",
+      "Oats",
+      "Masala Oats"
+    ],
+    "category": "Grains",
+    "packSize": "500 g",
+    "avgPackPrice": 90
+  },
+  {
+    "id": 14,
+    "name": "Chicken Breast",
+    "aliases": [
+      "Boneless Chicken",
+      "Murgh"
+    ],
+    "category": "Meat",
+    "packSize": "500 g",
+    "avgPackPrice": 170
+  },
+  {
+    "id": 15,
+    "name": "Peanut Butter",
+    "aliases": [
+      "PB",
+      "Mungfali Butter"
+    ],
+    "category": "Spreads",
+    "packSize": "350 g",
+    "avgPackPrice": 140
+  },
+  {
+    "id": 16,
+    "name": "Butter",
+    "aliases": [
+      "Makhan",
+      "Amul Butter"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "100 g",
+    "avgPackPrice": 56
+  },
+  {
+    "id": 17,
+    "name": "Green Chilli",
+    "aliases": [
+      "Hari Mirch",
+      "Mirchi"
+    ],
+    "category": "Produce",
+    "packSize": "100 g",
+    "avgPackPrice": 12
+  },
+  {
+    "id": 18,
+    "name": "Ginger",
+    "aliases": [
+      "Adrak",
+      "Inji"
+    ],
+    "category": "Produce",
+    "packSize": "100 g",
+    "avgPackPrice": 20
+  },
+  {
+    "id": 19,
+    "name": "Garlic",
+    "aliases": [
+      "Lahsun",
+      "Lasun",
+      "Poondu"
+    ],
+    "category": "Produce",
+    "packSize": "100 g",
+    "avgPackPrice": 25
+  },
+  {
+    "id": 20,
+    "name": "Soya Chunks",
+    "aliases": [
+      "Mealmaker",
+      "Nutrela",
+      "Soya Keema"
+    ],
+    "category": "Proteins",
+    "packSize": "200 g",
+    "avgPackPrice": 45
+  },
+  {
+    "id": 21,
+    "name": "Peanuts",
+    "aliases": [
+      "Moongphali",
+      "Groundnut",
+      "Shengdana"
+    ],
+    "category": "Nuts",
+    "packSize": "200 g",
+    "avgPackPrice": 40
+  },
+  {
+    "id": 22,
+    "name": "Mustard Seeds",
+    "aliases": [
+      "Rai",
+      "Sarson"
+    ],
+    "category": "Spices",
+    "packSize": "100 g",
+    "avgPackPrice": 22
+  },
+  {
+    "id": 23,
+    "name": "Cumin Seeds",
+    "aliases": [
+      "Jeera",
+      "Jira"
+    ],
+    "category": "Spices",
+    "packSize": "100 g",
+    "avgPackPrice": 38
+  },
+  {
+    "id": 24,
+    "name": "Turmeric Powder",
+    "aliases": [
+      "Haldi",
+      "Manjal"
+    ],
+    "category": "Spices",
+    "packSize": "100 g",
+    "avgPackPrice": 28
+  },
+  {
+    "id": 25,
+    "name": "Red Chilli Powder",
+    "aliases": [
+      "Lal Mirch",
+      "Kashmiri Mirch"
+    ],
+    "category": "Spices",
+    "packSize": "100 g",
+    "avgPackPrice": 34
+  },
+  {
+    "id": 26,
+    "name": "Garam Masala",
+    "aliases": [
+      "Curry Powder",
+      "Spice Blend"
+    ],
+    "category": "Spices",
+    "packSize": "100 g",
+    "avgPackPrice": 45
+  },
+  {
+    "id": 27,
+    "name": "Cooking Oil",
+    "aliases": [
+      "Tel",
+      "Refined Oil",
+      "Mustard Oil"
+    ],
+    "category": "Oils",
+    "packSize": "1 L",
+    "avgPackPrice": 130
+  },
+  {
+    "id": 28,
+    "name": "Ghee",
+    "aliases": [
+      "Desi Ghee",
+      "Clarified Butter",
+      "Neyyi"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "200 ml",
+    "avgPackPrice": 155
+  },
+  {
+    "id": 29,
+    "name": "Milk",
+    "aliases": [
+      "Doodh",
+      "Paal"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "500 ml",
+    "avgPackPrice": 33
+  },
+  {
+    "id": 30,
+    "name": "Cheese Slice",
+    "aliases": [
+      "Processed Cheese",
+      "Cheddar Slice"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "10 slices",
+    "avgPackPrice": 110
+  },
+  {
+    "id": 31,
+    "name": "Fettuccine Pasta",
+    "aliases": [
+      "Pasta",
+      "Spaghetti",
+      "Noodles"
+    ],
+    "category": "Grains",
+    "packSize": "500 g",
+    "avgPackPrice": 120
+  },
+  {
+    "id": 32,
+    "name": "Mushroom",
+    "aliases": [
+      "Button Mushroom",
+      "Kukurmutta"
+    ],
+    "category": "Produce",
+    "packSize": "200 g",
+    "avgPackPrice": 65
+  },
+  {
+    "id": 33,
+    "name": "Truffle Oil",
+    "aliases": [
+      "Truffle Essence",
+      "Artisan Oil"
+    ],
+    "category": "Gourmet",
+    "packSize": "100 ml",
+    "avgPackPrice": 450
+  },
+  {
+    "id": 34,
+    "name": "Dragon Fruit",
+    "aliases": [
+      "Pitaya",
+      "Kamalam"
+    ],
+    "category": "Fruits",
+    "packSize": "1 piece",
+    "avgPackPrice": 95
+  },
+  {
+    "id": 35,
+    "name": "Acai Puree",
+    "aliases": [
+      "Acai Berry",
+      "Berry Blend"
+    ],
+    "category": "Gourmet",
+    "packSize": "200 g",
+    "avgPackPrice": 290
+  },
+  {
+    "id": 36,
+    "name": "Avocado",
+    "aliases": [
+      "Butter Fruit",
+      "Makhan Phal"
+    ],
+    "category": "Produce",
+    "packSize": "1 piece",
+    "avgPackPrice": 85
+  },
+  {
+    "id": 37,
+    "name": "Sourdough Bread",
+    "aliases": [
+      "Artisan Bread",
+      "Sourdough Loaf"
+    ],
+    "category": "Bakery",
+    "packSize": "400 g",
+    "avgPackPrice": 135
+  },
+  {
+    "id": 38,
+    "name": "Quinoa",
+    "aliases": [
+      "Supergrain",
+      "Inca Wheat"
+    ],
+    "category": "Grains",
+    "packSize": "500 g",
+    "avgPackPrice": 195
+  },
+  {
+    "id": 39,
+    "name": "Salmon Fillet",
+    "aliases": [
+      "Raw Salmon",
+      "Atlantic Salmon"
+    ],
+    "category": "Meat",
+    "packSize": "250 g",
+    "avgPackPrice": 380
+  },
+  {
+    "id": 40,
+    "name": "Soy Sauce",
+    "aliases": [
+      "Dark Soya Sauce",
+      "Shoyu"
+    ],
+    "category": "Sauces",
+    "packSize": "200 ml",
+    "avgPackPrice": 60
+  },
+  {
+    "id": 41,
+    "name": "Tofu",
+    "aliases": [
+      "Bean Curd",
+      "Soya Paneer"
+    ],
+    "category": "Proteins",
+    "packSize": "200 g",
+    "avgPackPrice": 65
+  },
+  {
+    "id": 42,
+    "name": "Black Beans",
+    "aliases": [
+      "Frijoles",
+      "Rajma Chota"
+    ],
+    "category": "Pulses",
+    "packSize": "500 g",
+    "avgPackPrice": 95
+  },
+  {
+    "id": 43,
+    "name": "Sweet Corn",
+    "aliases": [
+      "Makai",
+      "Corn Kernels"
+    ],
+    "category": "Produce",
+    "packSize": "250 g",
+    "avgPackPrice": 40
+  },
+  {
+    "id": 44,
+    "name": "Greek Yogurt",
+    "aliases": [
+      "Hung Curd",
+      "Protein Dahi"
+    ],
+    "category": "Dairy & Eggs",
+    "packSize": "400 g",
+    "avgPackPrice": 90
+  },
+  {
+    "id": 45,
+    "name": "Granola",
+    "aliases": [
+      "Muesli",
+      "Breakfast Clusters"
+    ],
+    "category": "Grains",
+    "packSize": "400 g",
+    "avgPackPrice": 185
+  },
+  {
+    "id": 46,
+    "name": "Banana",
+    "aliases": [
+      "Kela",
+      "Vazhaipazham"
+    ],
+    "category": "Fruits",
+    "packSize": "6 pack",
+    "avgPackPrice": 45
+  },
+  {
+    "id": 47,
+    "name": "Maggi Noodles",
+    "aliases": [
+      "Instant Noodles",
+      "2-Min Noodles"
+    ],
+    "category": "Grains",
+    "packSize": "4 pack",
+    "avgPackPrice": 56
+  },
+  {
+    "id": 48,
+    "name": "Spinach",
+    "aliases": [
+      "Palak",
+      "Keerai"
+    ],
+    "category": "Produce",
+    "packSize": "250 g",
+    "avgPackPrice": 25
+  },
+  {
+    "id": 49,
+    "name": "Capsicum",
+    "aliases": [
+      "Shimla Mirch",
+      "Bell Pepper"
+    ],
+    "category": "Produce",
+    "packSize": "250 g",
+    "avgPackPrice": 32
+  },
+  {
+    "id": 50,
+    "name": "Lemon",
+    "aliases": [
+      "Nimbu",
+      "Lime"
+    ],
+    "category": "Produce",
+    "packSize": "4 pack",
+    "avgPackPrice": 20
+  }
+]

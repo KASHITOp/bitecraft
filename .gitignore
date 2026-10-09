@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+**/node_modules/
+.pub-cache/
+.pub/
+
+# Flutter / Dart
+.dart_tool/
+**/.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+**/build/
+**/coverage/
+
+# Expo / React Native
+.expo/
+**/.expo/
+dist/
+**/dist/
+
+# Android Studio / IntelliJ / IDE
+.idea/
+**/.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Build artifacts & symbols
+app.*.symbols
+app.*.map.json
+android/app/debug
+android/app/profile
+android/app/release
+.widget_preview/
+
+# System / OS
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.history

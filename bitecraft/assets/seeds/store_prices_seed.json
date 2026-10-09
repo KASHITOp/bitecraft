@@ -1,0 +1,752 @@
+[
+  {
+    "ingredient_id": 1,
+    "store": "ZEPTO",
+    "price": 37
+  },
+  {
+    "ingredient_id": 1,
+    "store": "BLINKIT",
+    "price": 38
+  },
+  {
+    "ingredient_id": 1,
+    "store": "INSTAMART",
+    "price": 41
+  },
+  {
+    "ingredient_id": 2,
+    "store": "ZEPTO",
+    "price": 32
+  },
+  {
+    "ingredient_id": 2,
+    "store": "BLINKIT",
+    "price": 34
+  },
+  {
+    "ingredient_id": 2,
+    "store": "INSTAMART",
+    "price": 34
+  },
+  {
+    "ingredient_id": 3,
+    "store": "ZEPTO",
+    "price": 29
+  },
+  {
+    "ingredient_id": 3,
+    "store": "BLINKIT",
+    "price": 27
+  },
+  {
+    "ingredient_id": 3,
+    "store": "INSTAMART",
+    "price": 29
+  },
+  {
+    "ingredient_id": 4,
+    "store": "ZEPTO",
+    "price": 16
+  },
+  {
+    "ingredient_id": 4,
+    "store": "BLINKIT",
+    "price": 16
+  },
+  {
+    "ingredient_id": 4,
+    "store": "INSTAMART",
+    "price": 15
+  },
+  {
+    "ingredient_id": 5,
+    "store": "ZEPTO",
+    "price": 40
+  },
+  {
+    "ingredient_id": 5,
+    "store": "BLINKIT",
+    "price": 40
+  },
+  {
+    "ingredient_id": 5,
+    "store": "INSTAMART",
+    "price": 42
+  },
+  {
+    "ingredient_id": 6,
+    "store": "ZEPTO",
+    "price": 51
+  },
+  {
+    "ingredient_id": 6,
+    "store": "BLINKIT",
+    "price": 53
+  },
+  {
+    "ingredient_id": 6,
+    "store": "INSTAMART",
+    "price": 50
+  },
+  {
+    "ingredient_id": 7,
+    "store": "ZEPTO",
+    "price": 85
+  },
+  {
+    "ingredient_id": 7,
+    "store": "BLINKIT",
+    "price": 80
+  },
+  {
+    "ingredient_id": 7,
+    "store": "INSTAMART",
+    "price": 91
+  },
+  {
+    "ingredient_id": 8,
+    "store": "ZEPTO",
+    "price": 36
+  },
+  {
+    "ingredient_id": 8,
+    "store": "BLINKIT",
+    "price": 35
+  },
+  {
+    "ingredient_id": 8,
+    "store": "INSTAMART",
+    "price": 37
+  },
+  {
+    "ingredient_id": 9,
+    "store": "ZEPTO",
+    "price": 42
+  },
+  {
+    "ingredient_id": 9,
+    "store": "BLINKIT",
+    "price": 42
+  },
+  {
+    "ingredient_id": 9,
+    "store": "INSTAMART",
+    "price": 41
+  },
+  {
+    "ingredient_id": 10,
+    "store": "ZEPTO",
+    "price": 62
+  },
+  {
+    "ingredient_id": 10,
+    "store": "BLINKIT",
+    "price": 64
+  },
+  {
+    "ingredient_id": 10,
+    "store": "INSTAMART",
+    "price": 66
+  },
+  {
+    "ingredient_id": 11,
+    "store": "ZEPTO",
+    "price": 69
+  },
+  {
+    "ingredient_id": 11,
+    "store": "BLINKIT",
+    "price": 73
+  },
+  {
+    "ingredient_id": 11,
+    "store": "INSTAMART",
+    "price": 69
+  },
+  {
+    "ingredient_id": 12,
+    "store": "ZEPTO",
+    "price": 85
+  },
+  {
+    "ingredient_id": 12,
+    "store": "BLINKIT",
+    "price": 82
+  },
+  {
+    "ingredient_id": 12,
+    "store": "INSTAMART",
+    "price": 82
+  },
+  {
+    "ingredient_id": 13,
+    "store": "ZEPTO",
+    "price": 92
+  },
+  {
+    "ingredient_id": 13,
+    "store": "BLINKIT",
+    "price": 92
+  },
+  {
+    "ingredient_id": 13,
+    "store": "INSTAMART",
+    "price": 96
+  },
+  {
+    "ingredient_id": 14,
+    "store": "ZEPTO",
+    "price": 177
+  },
+  {
+    "ingredient_id": 14,
+    "store": "BLINKIT",
+    "price": 160
+  },
+  {
+    "ingredient_id": 14,
+    "store": "INSTAMART",
+    "price": 179
+  },
+  {
+    "ingredient_id": 15,
+    "store": "ZEPTO",
+    "price": 134
+  },
+  {
+    "ingredient_id": 15,
+    "store": "BLINKIT",
+    "price": 140
+  },
+  {
+    "ingredient_id": 15,
+    "store": "INSTAMART",
+    "price": 144
+  },
+  {
+    "ingredient_id": 16,
+    "store": "ZEPTO",
+    "price": 55
+  },
+  {
+    "ingredient_id": 16,
+    "store": "BLINKIT",
+    "price": 59
+  },
+  {
+    "ingredient_id": 16,
+    "store": "INSTAMART",
+    "price": 57
+  },
+  {
+    "ingredient_id": 17,
+    "store": "ZEPTO",
+    "price": 12
+  },
+  {
+    "ingredient_id": 17,
+    "store": "BLINKIT",
+    "price": 12
+  },
+  {
+    "ingredient_id": 17,
+    "store": "INSTAMART",
+    "price": 12
+  },
+  {
+    "ingredient_id": 18,
+    "store": "ZEPTO",
+    "price": 20
+  },
+  {
+    "ingredient_id": 18,
+    "store": "BLINKIT",
+    "price": 21
+  },
+  {
+    "ingredient_id": 18,
+    "store": "INSTAMART",
+    "price": 19
+  },
+  {
+    "ingredient_id": 19,
+    "store": "ZEPTO",
+    "price": 26
+  },
+  {
+    "ingredient_id": 19,
+    "store": "BLINKIT",
+    "price": 24
+  },
+  {
+    "ingredient_id": 19,
+    "store": "INSTAMART",
+    "price": 27
+  },
+  {
+    "ingredient_id": 20,
+    "store": "ZEPTO",
+    "price": 43
+  },
+  {
+    "ingredient_id": 20,
+    "store": "BLINKIT",
+    "price": 46
+  },
+  {
+    "ingredient_id": 20,
+    "store": "INSTAMART",
+    "price": 47
+  },
+  {
+    "ingredient_id": 21,
+    "store": "ZEPTO",
+    "price": 39
+  },
+  {
+    "ingredient_id": 21,
+    "store": "BLINKIT",
+    "price": 38
+  },
+  {
+    "ingredient_id": 21,
+    "store": "INSTAMART",
+    "price": 41
+  },
+  {
+    "ingredient_id": 22,
+    "store": "ZEPTO",
+    "price": 22
+  },
+  {
+    "ingredient_id": 22,
+    "store": "BLINKIT",
+    "price": 22
+  },
+  {
+    "ingredient_id": 22,
+    "store": "INSTAMART",
+    "price": 22
+  },
+  {
+    "ingredient_id": 23,
+    "store": "ZEPTO",
+    "price": 39
+  },
+  {
+    "ingredient_id": 23,
+    "store": "BLINKIT",
+    "price": 40
+  },
+  {
+    "ingredient_id": 23,
+    "store": "INSTAMART",
+    "price": 38
+  },
+  {
+    "ingredient_id": 24,
+    "store": "ZEPTO",
+    "price": 29
+  },
+  {
+    "ingredient_id": 24,
+    "store": "BLINKIT",
+    "price": 27
+  },
+  {
+    "ingredient_id": 24,
+    "store": "INSTAMART",
+    "price": 27
+  },
+  {
+    "ingredient_id": 25,
+    "store": "ZEPTO",
+    "price": 33
+  },
+  {
+    "ingredient_id": 25,
+    "store": "BLINKIT",
+    "price": 35
+  },
+  {
+    "ingredient_id": 25,
+    "store": "INSTAMART",
+    "price": 36
+  },
+  {
+    "ingredient_id": 26,
+    "store": "ZEPTO",
+    "price": 44
+  },
+  {
+    "ingredient_id": 26,
+    "store": "BLINKIT",
+    "price": 43
+  },
+  {
+    "ingredient_id": 26,
+    "store": "INSTAMART",
+    "price": 47
+  },
+  {
+    "ingredient_id": 27,
+    "store": "ZEPTO",
+    "price": 130
+  },
+  {
+    "ingredient_id": 27,
+    "store": "BLINKIT",
+    "price": 133
+  },
+  {
+    "ingredient_id": 27,
+    "store": "INSTAMART",
+    "price": 134
+  },
+  {
+    "ingredient_id": 28,
+    "store": "ZEPTO",
+    "price": 158
+  },
+  {
+    "ingredient_id": 28,
+    "store": "BLINKIT",
+    "price": 146
+  },
+  {
+    "ingredient_id": 28,
+    "store": "INSTAMART",
+    "price": 157
+  },
+  {
+    "ingredient_id": 29,
+    "store": "ZEPTO",
+    "price": 34
+  },
+  {
+    "ingredient_id": 29,
+    "store": "BLINKIT",
+    "price": 33
+  },
+  {
+    "ingredient_id": 29,
+    "store": "INSTAMART",
+    "price": 33
+  },
+  {
+    "ingredient_id": 30,
+    "store": "ZEPTO",
+    "price": 106
+  },
+  {
+    "ingredient_id": 30,
+    "store": "BLINKIT",
+    "price": 117
+  },
+  {
+    "ingredient_id": 30,
+    "store": "INSTAMART",
+    "price": 107
+  },
+  {
+    "ingredient_id": 31,
+    "store": "ZEPTO",
+    "price": 118
+  },
+  {
+    "ingredient_id": 31,
+    "store": "BLINKIT",
+    "price": 118
+  },
+  {
+    "ingredient_id": 31,
+    "store": "INSTAMART",
+    "price": 128
+  },
+  {
+    "ingredient_id": 32,
+    "store": "ZEPTO",
+    "price": 65
+  },
+  {
+    "ingredient_id": 32,
+    "store": "BLINKIT",
+    "price": 68
+  },
+  {
+    "ingredient_id": 32,
+    "store": "INSTAMART",
+    "price": 68
+  },
+  {
+    "ingredient_id": 33,
+    "store": "ZEPTO",
+    "price": 459
+  },
+  {
+    "ingredient_id": 33,
+    "store": "BLINKIT",
+    "price": 432
+  },
+  {
+    "ingredient_id": 33,
+    "store": "INSTAMART",
+    "price": 464
+  },
+  {
+    "ingredient_id": 34,
+    "store": "ZEPTO",
+    "price": 99
+  },
+  {
+    "ingredient_id": 34,
+    "store": "BLINKIT",
+    "price": 97
+  },
+  {
+    "ingredient_id": 34,
+    "store": "INSTAMART",
+    "price": 96
+  },
+  {
+    "ingredient_id": 35,
+    "store": "ZEPTO",
+    "price": 278
+  },
+  {
+    "ingredient_id": 35,
+    "store": "BLINKIT",
+    "price": 273
+  },
+  {
+    "ingredient_id": 35,
+    "store": "INSTAMART",
+    "price": 287
+  },
+  {
+    "ingredient_id": 36,
+    "store": "ZEPTO",
+    "price": 83
+  },
+  {
+    "ingredient_id": 36,
+    "store": "BLINKIT",
+    "price": 85
+  },
+  {
+    "ingredient_id": 36,
+    "store": "INSTAMART",
+    "price": 82
+  },
+  {
+    "ingredient_id": 37,
+    "store": "ZEPTO",
+    "price": 135
+  },
+  {
+    "ingredient_id": 37,
+    "store": "BLINKIT",
+    "price": 143
+  },
+  {
+    "ingredient_id": 37,
+    "store": "INSTAMART",
+    "price": 144
+  },
+  {
+    "ingredient_id": 38,
+    "store": "ZEPTO",
+    "price": 199
+  },
+  {
+    "ingredient_id": 38,
+    "store": "BLINKIT",
+    "price": 191
+  },
+  {
+    "ingredient_id": 38,
+    "store": "INSTAMART",
+    "price": 205
+  },
+  {
+    "ingredient_id": 39,
+    "store": "ZEPTO",
+    "price": 395
+  },
+  {
+    "ingredient_id": 39,
+    "store": "BLINKIT",
+    "price": 395
+  },
+  {
+    "ingredient_id": 39,
+    "store": "INSTAMART",
+    "price": 391
+  },
+  {
+    "ingredient_id": 40,
+    "store": "ZEPTO",
+    "price": 58
+  },
+  {
+    "ingredient_id": 40,
+    "store": "BLINKIT",
+    "price": 58
+  },
+  {
+    "ingredient_id": 40,
+    "store": "INSTAMART",
+    "price": 61
+  },
+  {
+    "ingredient_id": 41,
+    "store": "ZEPTO",
+    "price": 64
+  },
+  {
+    "ingredient_id": 41,
+    "store": "BLINKIT",
+    "price": 66
+  },
+  {
+    "ingredient_id": 41,
+    "store": "INSTAMART",
+    "price": 64
+  },
+  {
+    "ingredient_id": 42,
+    "store": "ZEPTO",
+    "price": 95
+  },
+  {
+    "ingredient_id": 42,
+    "store": "BLINKIT",
+    "price": 89
+  },
+  {
+    "ingredient_id": 42,
+    "store": "INSTAMART",
+    "price": 92
+  },
+  {
+    "ingredient_id": 43,
+    "store": "ZEPTO",
+    "price": 41
+  },
+  {
+    "ingredient_id": 43,
+    "store": "BLINKIT",
+    "price": 40
+  },
+  {
+    "ingredient_id": 43,
+    "store": "INSTAMART",
+    "price": 43
+  },
+  {
+    "ingredient_id": 44,
+    "store": "ZEPTO",
+    "price": 94
+  },
+  {
+    "ingredient_id": 44,
+    "store": "BLINKIT",
+    "price": 95
+  },
+  {
+    "ingredient_id": 44,
+    "store": "INSTAMART",
+    "price": 95
+  },
+  {
+    "ingredient_id": 45,
+    "store": "ZEPTO",
+    "price": 178
+  },
+  {
+    "ingredient_id": 45,
+    "store": "BLINKIT",
+    "price": 181
+  },
+  {
+    "ingredient_id": 45,
+    "store": "INSTAMART",
+    "price": 191
+  },
+  {
+    "ingredient_id": 46,
+    "store": "ZEPTO",
+    "price": 44
+  },
+  {
+    "ingredient_id": 46,
+    "store": "BLINKIT",
+    "price": 47
+  },
+  {
+    "ingredient_id": 46,
+    "store": "INSTAMART",
+    "price": 45
+  },
+  {
+    "ingredient_id": 47,
+    "store": "ZEPTO",
+    "price": 56
+  },
+  {
+    "ingredient_id": 47,
+    "store": "BLINKIT",
+    "price": 54
+  },
+  {
+    "ingredient_id": 47,
+    "store": "INSTAMART",
+    "price": 55
+  },
+  {
+    "ingredient_id": 48,
+    "store": "ZEPTO",
+    "price": 26
+  },
+  {
+    "ingredient_id": 48,
+    "store": "BLINKIT",
+    "price": 26
+  },
+  {
+    "ingredient_id": 48,
+    "store": "INSTAMART",
+    "price": 24
+  },
+  {
+    "ingredient_id": 49,
+    "store": "ZEPTO",
+    "price": 33
+  },
+  {
+    "ingredient_id": 49,
+    "store": "BLINKIT",
+    "price": 30
+  },
+  {
+    "ingredient_id": 49,
+    "store": "INSTAMART",
+    "price": 34
+  },
+  {
+    "ingredient_id": 50,
+    "store": "ZEPTO",
+    "price": 19
+  },
+  {
+    "ingredient_id": 50,
+    "store": "BLINKIT",
+    "price": 20
+  },
+  {
+    "ingredient_id": 50,
+    "store": "INSTAMART",
+    "price": 21
+  }
+]
