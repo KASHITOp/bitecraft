@@ -19,6 +19,7 @@ class FloatingPillNav extends StatelessWidget {
     final navItems = [
       _NavItem(Icons.explore_outlined, Icons.explore_rounded, 'Explore'),
       _NavItem(Icons.auto_awesome_outlined, Icons.auto_awesome_rounded, 'Chef AI'),
+      _NavItem(Icons.shopping_basket_outlined, Icons.shopping_basket_rounded, 'My Pantry'),
       _NavItem(Icons.calendar_month_outlined, Icons.calendar_month_rounded, 'Planner'),
       _NavItem(Icons.shopping_bag_outlined, Icons.shopping_bag_rounded, 'Quick Mart'),
       _NavItem(Icons.bookmark_outline_rounded, Icons.bookmark_rounded, 'Saved'),
@@ -51,7 +52,7 @@ class FloatingPillNav extends StatelessWidget {
               ),
             ],
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: List.generate(navItems.length, (index) {
@@ -84,7 +85,7 @@ class FloatingPillNav extends StatelessWidget {
                           curve: Curves.easeOutBack,
                           child: Icon(
                             isSelected ? item.selectedIcon : item.icon,
-                            size: 22,
+                            size: 20,
                             color: isSelected
                                 ? AppColors.primary
                                 : (isDark ? AppColors.darkInkTertiary : AppColors.lightInkTertiary),
@@ -94,13 +95,17 @@ class FloatingPillNav extends StatelessWidget {
                         AnimatedDefaultTextStyle(
                           duration: const Duration(milliseconds: 180),
                           style: TextStyle(
-                            fontSize: 10,
+                            fontSize: 9.5,
                             fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                             color: isSelected
                                 ? AppColors.primary
                                 : (isDark ? AppColors.darkInkTertiary : AppColors.lightInkTertiary),
                           ),
-                          child: Text(item.label),
+                          child: Text(
+                            item.label,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
                       ],
                     ),

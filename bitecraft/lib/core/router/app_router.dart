@@ -6,6 +6,7 @@ import '../../features/chat/screens/chef_chat_screen.dart';
 import '../../features/planner/screens/meal_planner_screen.dart';
 import '../../features/quickmart/screens/quick_mart_screen.dart';
 import '../../features/saved/screens/saved_screen.dart';
+import '../../features/pantry/screens/pantry_screen.dart';
 import '../../features/detail/screens/recipe_detail_screen.dart';
 import '../../features/onboarding/screens/onboarding_screen.dart';
 import '../../features/dev/gallery_screen.dart';
@@ -25,12 +26,14 @@ final appRouter = GoRouter(
         int index = 0;
         if (location.startsWith('/chat')) {
           index = 1;
-        } else if (location.startsWith('/planner')) {
+        } else if (location.startsWith('/pantry')) {
           index = 2;
-        } else if (location.startsWith('/quick-mart')) {
+        } else if (location.startsWith('/planner')) {
           index = 3;
-        } else if (location.startsWith('/saved')) {
+        } else if (location.startsWith('/quick-mart')) {
           index = 4;
+        } else if (location.startsWith('/saved')) {
+          index = 5;
         }
 
         return MainShell(
@@ -44,12 +47,15 @@ final appRouter = GoRouter(
                 context.go('/chat');
                 break;
               case 2:
-                context.go('/planner');
+                context.go('/pantry');
                 break;
               case 3:
-                context.go('/quick-mart');
+                context.go('/planner');
                 break;
               case 4:
+                context.go('/quick-mart');
+                break;
+              case 5:
                 context.go('/saved');
                 break;
             }
@@ -67,6 +73,11 @@ final appRouter = GoRouter(
           path: '/chat',
           name: 'chat',
           pageBuilder: (context, state) => const NoTransitionPage(child: ChefChatScreen()),
+        ),
+        GoRoute(
+          path: '/pantry',
+          name: 'pantry',
+          pageBuilder: (context, state) => const NoTransitionPage(child: PantryScreen()),
         ),
         GoRoute(
           path: '/planner',

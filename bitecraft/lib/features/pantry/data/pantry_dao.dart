@@ -98,6 +98,11 @@ class PantryDao extends DatabaseAccessor<AppDatabase> with _$PantryDaoMixin {
         .watch();
   }
 
+  /// Watch all pantry items
+  Stream<List<PantryItem>> watchAllItems() {
+    return (select(pantryItems)..orderBy([(tbl) => OrderingTerm.asc(tbl.expiryDate)])).watch();
+  }
+
   /// Get all pantry items
   Future<List<PantryItem>> getAllItems() async {
     return select(pantryItems).get();
