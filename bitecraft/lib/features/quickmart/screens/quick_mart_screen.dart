@@ -70,7 +70,28 @@ class _QuickMartScreenState extends ConsumerState<QuickMartScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quick Mart Comparator', style: AppTypography.h3(isDark)),
+        title: Row(
+          children: [
+            Text('Quick Mart', style: AppTypography.h3(isDark)),
+            const SizedBox(width: 8),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              decoration: BoxDecoration(
+                color: AppColors.primary.withOpacity(0.12),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: AppColors.primary.withOpacity(0.25)),
+              ),
+              child: const Text(
+                'Sample prices',
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primary,
+                ),
+              ),
+            ),
+          ],
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.share_outlined),
@@ -111,9 +132,9 @@ class _QuickMartScreenState extends ConsumerState<QuickMartScreen> {
             return ListView(
               padding: const EdgeInsets.fromLTRB(20, 10, 20, 110),
               children: [
-                // Demo Data Disclaimer Ribbon
+                // Sample Prices Disclaimer Ribbon
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                   decoration: BoxDecoration(
                     color: AppColors.primary.withOpacity(0.08),
                     borderRadius: BorderRadius.circular(12),
@@ -121,11 +142,26 @@ class _QuickMartScreenState extends ConsumerState<QuickMartScreen> {
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.info_outline_rounded, size: 16, color: AppColors.primary),
-                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: AppColors.primary,
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: const Text(
+                          'Sample prices',
+                          style: TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            letterSpacing: 0.3,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
                       Expanded(
                         child: Text(
-                          'Estimated prices (demo data) • Local dark store pricing',
+                          'Estimated local dark store pricing (Bangalore 2026 demo data)',
                           style: TextStyle(
                             fontSize: 11,
                             fontWeight: FontWeight.w600,

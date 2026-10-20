@@ -24,7 +24,8 @@ class RecipeRepository {
     final row = await query.getSingle();
     final count = row.read(countExp) ?? 0;
 
-    if (count == 0) {
+    if (count == 0 || count > 200) {
+      await _db.delete(_db.localRecipes).go();
       await _seedLocalCache();
     }
     _seeded = true;
